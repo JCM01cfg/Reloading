@@ -1,53 +1,17 @@
-﻿using OfficeOpenXml;
-using System.IO;    
+﻿
+using OfficeOpenXml;
+using System;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using System.Data;
-
-
-
 
 namespace Reloading
 {
     public partial class Form1 : Form
     {
-
-        private void ShowPanel(Panel panelToShow)
-        {
-            foreach (Control ctrl in this.Controls)
-            {
-                if (ctrl is Panel panel && panel.Dock == DockStyle.Fill)
-                {
-                    panel.Visible = false;
-                }
-            }
-
-            panelToShow.Visible = true;
-            panelToShow.BringToFront();
-        }
-
-        private void ResetNavButtonColors()
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is Button btn &&
-                    (btn.Name.StartsWith("btn") || btn.Name.StartsWith("button")))
-                {
-                    // Only reset buttons that are NOT the current one
-                    if (btn != currentNavButton)
-                    {
-                        btn.BackColor = Color.DodgerBlue;
-                    }
-                }
-            }
-        }
-        
-
         private Button currentNavButton;
 
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
         private static extern IntPtr CreateRoundRectRgn
         (
             int nLeftRect,
@@ -57,85 +21,130 @@ namespace Reloading
             int nWidthEllipse,
             int nHeightEllipse
         );
+
         public Form1()
         {
             InitializeComponent();
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
+            // Rounded corners
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+
+            // Set initial nav style
             PnlNav.Height = btnDashboard.Height;
             PnlNav.Top = btnDashboard.Top;
             PnlNav.Left = btnDashboard.Left;
             btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+
+            // Load initial view
+            LoadView(new DashboardControl());
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ShowPanel(panelDashboard);
-            btnDashboard_Click(btnDashboard, EventArgs.Empty);
+            // Optional: if you want to do additional setup
+        }
+
+        private void ResetNavButtonColors()
+        {
+            foreach (Control control in panel1.Controls)
+            {
+                if (control is Button btn &&
+                    (btn.Name.StartsWith("btn") || btn.Name.StartsWith("button")) &&
+                    btn != currentNavButton)
+                {
+                    btn.BackColor = Color.SlateBlue;
+                }
+            }
+        }
+
+        private void LoadView(UserControl view)
+        {
+            panelMainView.Controls.Clear();
+            view.Dock = DockStyle.Fill;
+            panelMainView.Controls.Add(view);
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
             currentNavButton = btnDashboard;
-
             btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
 
             PnlNav.Height = btnDashboard.Height;
             PnlNav.Top = btnDashboard.Top;
             PnlNav.Left = btnDashboard.Left;
-            ShowPanel(panelDashboard);
 
+            LoadView(new DashboardControl());
         }
 
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnDashboard;
+            currentNavButton = btnAnalytics;
             btnAnalytics.BackColor = Color.FromArgb(46, 51, 73);
 
             PnlNav.Height = btnAnalytics.Height;
             PnlNav.Top = btnAnalytics.Top;
             PnlNav.Left = btnAnalytics.Left;
-            ShowPanel(panelAnalytics);
-            
 
+            LoadView(new AnalyticsControl());
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnDashboard;
+            currentNavButton = button1;
             button1.BackColor = Color.FromArgb(46, 51, 73);
 
             PnlNav.Height = button1.Height;
             PnlNav.Top = button1.Top;
             PnlNav.Left = button1.Left;
-            ShowPanel(panelSettings);
 
+            LoadView(new SettingsControl());
         }
 
         private void btnDashboard_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != btnDashboard)
-                btnDashboard.BackColor = Color.DodgerBlue;
+                btnDashboard.BackColor = Color.SlateBlue;
         }
 
         private void btnAnalytics_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != btnAnalytics)
-                btnAnalytics.BackColor = Color.DodgerBlue;
+                btnAnalytics.BackColor = Color.SlateBlue;
         }
 
         private void button1_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != button1)
-                button1.BackColor = Color.DodgerBlue;
+                button1.BackColor = Color.SlateBlue;
+        }
+        private void btnRecipes_Click(object sender, EventArgs e)
+        {
+            ResetNavButtonColors();
+            currentNavButton = btnRecipes;
+            btnRecipes.BackColor = Color.FromArgb(46, 51, 73);
+
+            PnlNav.Height = btnRecipes.Height;
+            PnlNav.Top = btnRecipes.Top;
+            PnlNav.Left = btnRecipes.Left;
+
+            LoadView(new RecipesControl());
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnStats_Click(object sender, EventArgs e)
         {
+            ResetNavButtonColors();
+            currentNavButton = btnStats;
+            btnStats.BackColor = Color.FromArgb(46, 51, 73);
 
+            PnlNav.Height = btnStats.Height;
+            PnlNav.Top = btnStats.Top;
+            PnlNav.Left = btnStats.Left;
+
+            LoadView(new StatsControl());
         }
     }
 }

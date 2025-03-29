@@ -1,16 +1,10 @@
-﻿namespace Reloading
+﻿
+namespace Reloading
 {
     partial class Form1
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,14 +16,11 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            btnStats = new Button();
             button1 = new Button();
             btnAnalytics = new Button();
             btnDashboard = new Button();
@@ -38,42 +29,53 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            panelDashboard = new Panel();
-            panelAnalytics = new Panel();
-            dataGridView1 = new DataGridView();
-            panelSettings = new Panel();
+            btnRecipes = new Button();
+            panelMainView = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panelDashboard.SuspendLayout();
-            panelAnalytics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.DodgerBlue;
+            panel1.BackColor = Color.SlateBlue;
+            panel1.Controls.Add(btnStats);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnAnalytics);
             panel1.Controls.Add(btnDashboard);
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(btnRecipes);
             panel1.Dock = DockStyle.Left;
-            panel1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel1.Font = new Font("Nirmala UI", 10.2F);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(186, 761);
+            panel1.Size = new Size(302, 1322);
             panel1.TabIndex = 0;
+            // 
+            // btnStats
+            // 
+            btnStats.FlatAppearance.BorderSize = 0;
+            btnStats.FlatStyle = FlatStyle.Flat;
+            btnStats.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold);
+            btnStats.ForeColor = SystemColors.Control;
+            btnStats.Location = new Point(3, 562);
+            btnStats.Name = "btnStats";
+            btnStats.Size = new Size(302, 92);
+            btnStats.TabIndex = 5;
+            btnStats.Text = "Statistics";
+            btnStats.UseVisualStyleBackColor = true;
+            btnStats.Click += btnStats_Click;
             // 
             // button1
             // 
             button1.Dock = DockStyle.Bottom;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold);
             button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(0, 707);
+            button1.Location = new Point(0, 1236);
             button1.Name = "button1";
-            button1.Size = new Size(186, 54);
+            button1.Size = new Size(302, 86);
             button1.TabIndex = 3;
             button1.Text = "Settings";
             button1.UseVisualStyleBackColor = true;
@@ -85,11 +87,11 @@
             btnAnalytics.Dock = DockStyle.Top;
             btnAnalytics.FlatAppearance.BorderSize = 0;
             btnAnalytics.FlatStyle = FlatStyle.Flat;
-            btnAnalytics.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAnalytics.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold);
             btnAnalytics.ForeColor = SystemColors.Control;
-            btnAnalytics.Location = new Point(0, 239);
+            btnAnalytics.Location = new Point(0, 382);
             btnAnalytics.Name = "btnAnalytics";
-            btnAnalytics.Size = new Size(186, 54);
+            btnAnalytics.Size = new Size(302, 86);
             btnAnalytics.TabIndex = 2;
             btnAnalytics.Text = "Analytics";
             btnAnalytics.UseVisualStyleBackColor = true;
@@ -101,11 +103,11 @@
             btnDashboard.Dock = DockStyle.Top;
             btnDashboard.FlatAppearance.BorderSize = 0;
             btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDashboard.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold);
             btnDashboard.ForeColor = SystemColors.Control;
-            btnDashboard.Location = new Point(0, 185);
+            btnDashboard.Location = new Point(0, 296);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(186, 54);
+            btnDashboard.Size = new Size(302, 86);
             btnDashboard.TabIndex = 1;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = true;
@@ -121,98 +123,79 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(186, 185);
+            panel2.Size = new Size(302, 296);
             panel2.TabIndex = 0;
             // 
             // PnlNav
             // 
             PnlNav.BackColor = Color.SkyBlue;
-            PnlNav.Location = new Point(0, 193);
+            PnlNav.Location = new Point(0, 309);
             PnlNav.Name = "PnlNav";
-            PnlNav.Size = new Size(3, 100);
+            PnlNav.Size = new Size(5, 160);
             PnlNav.TabIndex = 3;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Microsoft Sans Serif", 9F);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(36, 135);
+            label2.Location = new Point(58, 216);
             label2.Name = "label2";
-            label2.Size = new Size(116, 18);
+            label2.Size = new Size(187, 29);
             label2.TabIndex = 2;
             label2.Text = "Some User Text";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold);
             label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(46, 105);
+            label1.Location = new Point(75, 168);
             label1.Name = "label1";
-            label1.Size = new Size(97, 20);
+            label1.Size = new Size(156, 32);
             label1.TabIndex = 1;
             label1.Text = "UserName";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(60, 22);
+            pictureBox1.Location = new Point(98, 35);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(63, 63);
+            pictureBox1.Size = new Size(102, 101);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // panelDashboard
+            // btnRecipes
             // 
-            panelDashboard.BackColor = Color.LightSlateGray;
-            panelDashboard.Controls.Add(panelAnalytics);
-            panelDashboard.Dock = DockStyle.Fill;
-            panelDashboard.Location = new Point(186, 0);
-            panelDashboard.Name = "panelDashboard";
-            panelDashboard.Size = new Size(765, 761);
-            panelDashboard.TabIndex = 1;
+            btnRecipes.FlatAppearance.BorderSize = 0;
+            btnRecipes.FlatStyle = FlatStyle.Flat;
+            btnRecipes.Font = new Font("Nirmala UI", 10.2F, FontStyle.Bold);
+            btnRecipes.ForeColor = SystemColors.Control;
+            btnRecipes.Location = new Point(3, 464);
+            btnRecipes.Name = "btnRecipes";
+            btnRecipes.Size = new Size(302, 92);
+            btnRecipes.TabIndex = 4;
+            btnRecipes.Text = "Recipes";
+            btnRecipes.UseVisualStyleBackColor = true;
+            btnRecipes.Click += btnRecipes_Click;
             // 
-            // panelAnalytics
+            // panelMainView
             // 
-            panelAnalytics.Controls.Add(dataGridView1);
-            panelAnalytics.Controls.Add(panelSettings);
-            panelAnalytics.Dock = DockStyle.Fill;
-            panelAnalytics.Location = new Point(0, 0);
-            panelAnalytics.Name = "panelAnalytics";
-            panelAnalytics.Size = new Size(765, 761);
-            panelAnalytics.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(765, 761);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // panelSettings
-            // 
-            panelSettings.Dock = DockStyle.Fill;
-            panelSettings.Location = new Point(0, 0);
-            panelSettings.Name = "panelSettings";
-            panelSettings.Size = new Size(765, 761);
-            panelSettings.TabIndex = 0;
+            panelMainView.Dock = DockStyle.Fill;
+            panelMainView.Location = new Point(302, 0);
+            panelMainView.Name = "panelMainView";
+            panelMainView.Size = new Size(2310, 1322);
+            panelMainView.TabIndex = 1;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.Azure;
-            ClientSize = new Size(951, 761);
-            Controls.Add(panelDashboard);
+            ClientSize = new Size(2612, 1322);
+            Controls.Add(panelMainView);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -223,26 +206,23 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panelDashboard.ResumeLayout(false);
-            panelAnalytics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+
         }
 
         #endregion
 
-        private Panel panel1;
-        private Panel panel2;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Button btnDashboard;
-        private Label label2;
-        private Button btnAnalytics;
-        private Button button1;
-        private Panel PnlNav;
-        private Panel panelDashboard;
-        private Panel panelAnalytics;
-        private Panel panelSettings;
-        private DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAnalytics;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel PnlNav;
+        private System.Windows.Forms.Panel panelMainView;
+        private System.Windows.Forms.Button btnRecipes;
+        private Button btnStats;
     }
 }
