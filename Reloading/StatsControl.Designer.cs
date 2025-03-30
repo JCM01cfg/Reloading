@@ -42,5 +42,7 @@
         }
 
         #endregion
+
+        private ComboBox cartridgeDropDown;
     }
 }
