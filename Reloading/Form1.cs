@@ -68,8 +68,8 @@ namespace Reloading
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnDashboard;
             btnDashboard.BackColor = Color.FromArgb(46, 51, 73);
+            currentNavButton = btnDashboard;
 
             PnlNav.Height = btnDashboard.Height;
             PnlNav.Top = btnDashboard.Top;
@@ -81,8 +81,8 @@ namespace Reloading
         private void btnAnalytics_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnAnalytics;
             btnAnalytics.BackColor = Color.FromArgb(46, 51, 73);
+            currentNavButton = btnAnalytics;
 
             PnlNav.Height = btnAnalytics.Height;
             PnlNav.Top = btnAnalytics.Top;
@@ -94,8 +94,8 @@ namespace Reloading
         private void button1_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = button1;
             button1.BackColor = Color.FromArgb(46, 51, 73);
+            currentNavButton = button1;
 
             PnlNav.Height = button1.Height;
             PnlNav.Top = button1.Top;
@@ -124,8 +124,8 @@ namespace Reloading
         private void btnRecipes_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnRecipes;
             btnRecipes.BackColor = Color.FromArgb(46, 51, 73);
+            currentNavButton = btnRecipes;
 
             PnlNav.Height = btnRecipes.Height;
             PnlNav.Top = btnRecipes.Top;
@@ -137,8 +137,8 @@ namespace Reloading
         private void btnStats_Click(object sender, EventArgs e)
         {
             ResetNavButtonColors();
-            currentNavButton = btnStats;
             btnStats.BackColor = Color.FromArgb(46, 51, 73);
+
 
             PnlNav.Height = btnStats.Height;
             PnlNav.Top = btnStats.Top;

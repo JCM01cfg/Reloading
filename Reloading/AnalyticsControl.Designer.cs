@@ -3,6 +3,7 @@ namespace Reloading
 {
     partial class AnalyticsControl
     {
+        
         private System.ComponentModel.IContainer components = null;
 
         protected override void Dispose(bool disposing)
@@ -18,37 +19,89 @@ namespace Reloading
 
         private void InitializeComponent()
         {
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            labelTitle = new Label();
+            shotDataGrid = new DataGridView();
+            Cartridgelbl = new Label();
+            CartridgeSearchTextBox = new TextBox();
+            SearchShotDatabtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)shotDataGrid).BeginInit();
+            SuspendLayout();
             // 
             // labelTitle
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(0, 0);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Padding = new System.Windows.Forms.Padding(20);
-            this.labelTitle.Size = new System.Drawing.Size(259, 85);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "Analytics";
-            this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            labelTitle.AutoSize = true;
+            labelTitle.Dock = DockStyle.Top;
+            labelTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            labelTitle.ForeColor = Color.White;
+            labelTitle.Location = new Point(0, 0);
+            labelTitle.Margin = new Padding(2, 0, 2, 0);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Padding = new Padding(12);
+            labelTitle.Size = new Size(218, 78);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "Analytics";
+            labelTitle.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // shotDataGrid
+            // 
+            shotDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            shotDataGrid.Location = new Point(76, 150);
+            shotDataGrid.Name = "shotDataGrid";
+            shotDataGrid.RowHeadersWidth = 51;
+            shotDataGrid.Size = new Size(1283, 536);
+            shotDataGrid.TabIndex = 1;
+            // 
+            // Cartridgelbl
+            // 
+            Cartridgelbl.AutoSize = true;
+            Cartridgelbl.Location = new Point(76, 88);
+            Cartridgelbl.Name = "Cartridgelbl";
+            Cartridgelbl.Size = new Size(71, 20);
+            Cartridgelbl.TabIndex = 2;
+            Cartridgelbl.Text = "Cartridge";
+            // 
+            // CartridgeSearchTextBox
+            // 
+            CartridgeSearchTextBox.Location = new Point(169, 81);
+            CartridgeSearchTextBox.Name = "CartridgeSearchTextBox";
+            CartridgeSearchTextBox.Size = new Size(241, 27);
+            CartridgeSearchTextBox.TabIndex = 3;
+            CartridgeSearchTextBox.KeyDown += CartridgeSearchTextBox_KeyDown;
+            // 
+            // SearchShotDatabtn
+            // 
+            SearchShotDatabtn.Location = new Point(447, 79);
+            SearchShotDatabtn.Name = "SearchShotDatabtn";
+            SearchShotDatabtn.Size = new Size(94, 29);
+            SearchShotDatabtn.TabIndex = 4;
+            SearchShotDatabtn.Text = "Search";
+            SearchShotDatabtn.UseVisualStyleBackColor = true;
+            SearchShotDatabtn.Click += SearchShotDatabtn_Click;
             // 
             // AnalyticsControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.Controls.Add(this.labelTitle);
-            this.Name = "AnalyticsControl";
-            this.Size = new System.Drawing.Size(800, 450);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSlateGray;
+            Controls.Add(SearchShotDatabtn);
+            Controls.Add(CartridgeSearchTextBox);
+            Controls.Add(Cartridgelbl);
+            Controls.Add(shotDataGrid);
+            Controls.Add(labelTitle);
+            Margin = new Padding(2);
+            Name = "AnalyticsControl";
+            Size = new Size(1421, 788);
+            ((System.ComponentModel.ISupportInitialize)shotDataGrid).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Label labelTitle;
+        private DataGridView shotDataGrid;
+        private Label Cartridgelbl;
+        private TextBox CartridgeSearchTextBox;
+        private Button SearchShotDatabtn;
     }
 }

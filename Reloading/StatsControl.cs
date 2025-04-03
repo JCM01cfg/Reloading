@@ -53,23 +53,27 @@ namespace Reloading
 
             // Initialize the chartVelocity control (First chart in first row)
             chartVelocity = new Chart();
-            chartVelocity.Size = new Size(280, 300);  // Set the size of the chart (adjust width for side-by-side)
+            chartVelocity.Size = new Size(475, 300);  // Set the size of the chart (adjust width for side-by-side)
             chartVelocity.Location = new Point(10, 50);  // Set the position on the form
             this.Controls.Add(chartVelocity);  // Add chartVelocity to the control collection
 
             // Initialize the chartES control (Second chart in first row)
             chartES = new Chart();
-            chartES.Size = new Size(280, 300);  // Same width to align
-            chartES.Location = new Point(310, 50);  // Position it beside chartVelocity
+            chartES.Size = new Size(475, 300);  // Same width to align
+            chartES.Location = new Point(500, 50);  // Position it beside chartVelocity
             this.Controls.Add(chartES);
 
             // Initialize the chartSD control (First chart in second row)
             chartSD = new Chart();
-            chartSD.Size = new Size(280, 300);  // Same width for alignment
+            chartSD.Size = new Size(475, 300);  // Same width for alignment
             chartSD.Location = new Point(10, 360);  // Below the first row of charts
             this.Controls.Add(chartSD);
 
             // Add another chart if needed, in case you want 4 char
+            Chart chart4 = new Chart();
+            chart4.Size = new Size(475, 300);
+            chart4.Location = new Point(500, 360);
+            this.Controls.Add(chart4);
 
 
 
@@ -183,7 +187,7 @@ namespace Reloading
             };
             chartES.Titles.Add(title);
         }
-        private void ShowAvgSDChart(List<CartridgeStats> stats)
+        private void ShowAvgSDChart(List<CartridgeStats> stats) // Method to show the Average SD chart
         {
             chartSD.Series.Clear();
             chartSD.ChartAreas.Clear();
