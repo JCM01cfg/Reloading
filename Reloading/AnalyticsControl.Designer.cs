@@ -22,6 +22,7 @@ namespace Reloading
             labelTitle = new Label();
             shotDataGrid = new DataGridView();
             Cartridgelbl = new Label();
+            CartridgeComboBox = new ComboBox();
             CartridgeSearchTextBox = new TextBox();
             SearchShotDatabtn = new Button();
             ((System.ComponentModel.ISupportInitialize)shotDataGrid).BeginInit();
@@ -60,9 +61,17 @@ namespace Reloading
             Cartridgelbl.TabIndex = 2;
             Cartridgelbl.Text = "Cartridge";
             // 
+            // CartridgeComboBox
+            // 
+            CartridgeComboBox.FormattingEnabled = true;
+            CartridgeComboBox.Location = new Point(196, 88);
+            CartridgeComboBox.Name = "CartridgeComboBox";
+            CartridgeComboBox.Size = new Size(197, 28);
+            CartridgeComboBox.TabIndex = 5;
+            // 
             // CartridgeSearchTextBox
             // 
-            CartridgeSearchTextBox.Location = new Point(169, 81);
+            CartridgeSearchTextBox.Location = new Point(493, 4);
             CartridgeSearchTextBox.Name = "CartridgeSearchTextBox";
             CartridgeSearchTextBox.Size = new Size(241, 27);
             CartridgeSearchTextBox.TabIndex = 3;
@@ -70,7 +79,7 @@ namespace Reloading
             // 
             // SearchShotDatabtn
             // 
-            SearchShotDatabtn.Location = new Point(447, 79);
+            SearchShotDatabtn.Location = new Point(740, 3);
             SearchShotDatabtn.Name = "SearchShotDatabtn";
             SearchShotDatabtn.Size = new Size(94, 29);
             SearchShotDatabtn.TabIndex = 4;
@@ -83,6 +92,7 @@ namespace Reloading
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
+            Controls.Add(CartridgeComboBox);
             Controls.Add(SearchShotDatabtn);
             Controls.Add(CartridgeSearchTextBox);
             Controls.Add(Cartridgelbl);
@@ -101,6 +111,7 @@ namespace Reloading
         private System.Windows.Forms.Label labelTitle;
         private DataGridView shotDataGrid;
         private Label Cartridgelbl;
+        private ComboBox CartridgeComboBox;
         private TextBox CartridgeSearchTextBox;
         private Button SearchShotDatabtn;
     }

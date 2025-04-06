@@ -63,6 +63,7 @@ namespace Reloading
             panelMainView.Controls.Clear();
             view.Dock = DockStyle.Fill;
             panelMainView.Controls.Add(view);
+            view.BringToFront();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
