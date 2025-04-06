@@ -1,6 +1,4 @@
-﻿using System.Windows.Forms;
-
-namespace Reloading
+﻿namespace Reloading
 {
     public partial class AnalyticsControl : UserControl
     {

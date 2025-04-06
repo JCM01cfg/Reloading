@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
-
-namespace Reloading
+﻿namespace Reloading
 {
     public partial class RecipesControl : UserControl
     {
@@ -14,7 +9,7 @@ namespace Reloading
             InitializeComponent();
             LoadSampleData();
             LoadCartridgeList();
-            
+
         }
         public List<Recipe> GetRecipeList()
         {

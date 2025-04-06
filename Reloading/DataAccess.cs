@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Dapper;
 using Microsoft.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using System.Net.NetworkInformation;
+using System.Data;
 
 
 namespace Reloading
@@ -32,7 +26,7 @@ namespace Reloading
         }
         public List<string> GetAllCartridgeNames()
         {
-           
+
             using (IDbConnection connection = new SqlConnection(ListBindingHelper.CnnVal("SampleDb")))
             {
                 string query = "SELECT DISTINCT Cartridge FROM ShotData";

@@ -38,7 +38,7 @@ namespace Reloading
             // 
             // panel1
             // 
-            panel1.BackColor = Color.SlateBlue;
+            panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(btnStats);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btnAnalytics);
@@ -52,6 +52,7 @@ namespace Reloading
             panel1.Name = "panel1";
             panel1.Size = new Size(186, 689);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // btnStats
             // 
@@ -207,7 +208,7 @@ namespace Reloading
             ClientSize = new Size(1607, 689);
             Controls.Add(panelMainView);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;

@@ -1,9 +1,6 @@
 ﻿
 using OfficeOpenXml;
-using System;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Windows.Forms;
 
 namespace Reloading
 {
@@ -53,7 +50,7 @@ namespace Reloading
                     (btn.Name.StartsWith("btn") || btn.Name.StartsWith("button")) &&
                     btn != currentNavButton)
                 {
-                    btn.BackColor = Color.SlateBlue;
+                    btn.BackColor = SystemColors.ActiveCaption;
                 }
             }
         }
@@ -108,19 +105,19 @@ namespace Reloading
         private void btnDashboard_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != btnDashboard)
-                btnDashboard.BackColor = Color.SlateBlue;
+                btnDashboard.BackColor = SystemColors.ActiveCaption;
         }
 
         private void btnAnalytics_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != btnAnalytics)
-                btnAnalytics.BackColor = Color.SlateBlue;
+                btnAnalytics.BackColor = SystemColors.ActiveCaption;
         }
 
         private void button1_Leave(object sender, EventArgs e)
         {
             if (currentNavButton != button1)
-                button1.BackColor = Color.SlateBlue;
+                button1.BackColor = SystemColors.ActiveCaption;
         }
         private void btnRecipes_Click(object sender, EventArgs e)
         {
@@ -146,6 +143,11 @@ namespace Reloading
             PnlNav.Left = btnStats.Left;
 
             LoadView(new StatsControl());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

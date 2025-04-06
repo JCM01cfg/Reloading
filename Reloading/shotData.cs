@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Reloading
+﻿namespace Reloading
 {
     public class shotData
     {
@@ -35,6 +29,6 @@ namespace Reloading
         public string Book_Ref_Page { get; set; }
 
     }
-    
 
-    }
+
+}

@@ -1,13 +1,4 @@
-﻿using OfficeOpenXml.Drawing.Chart.ChartEx;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Reloading
@@ -15,10 +6,10 @@ namespace Reloading
     public partial class StatsControl : UserControl
     {
 
-        private Chart chartVelocity;
-        private Chart chartES;
-        private Chart chartSD;
-        private List<CartridgeStats> stats;
+        private readonly Chart chartVelocity;
+        private readonly Chart chartES;
+        private readonly Chart chartSD;
+        private readonly List<CartridgeStats> stats;
 
         private List<CartridgeStats> CalculateStats(List<Recipe> recipes)
         {
@@ -139,7 +130,7 @@ namespace Reloading
             {
                 Name = "Velocity",
                 ChartType = SeriesChartType.Bar,
-                Color = Color.SlateBlue,  // You can change the color if you like
+                Color = SystemColors.ActiveCaption,  // You can change the color if you like
                 Font = new Font("Segoe UI", 10)
             };
 
@@ -172,7 +163,7 @@ namespace Reloading
             {
                 Name = "Average ES",
                 ChartType = SeriesChartType.Bar,
-                Color = Color.SlateBlue,
+                Color = SystemColors.ActiveCaption,
                 Font = new Font("Segoe UI", 10)
             };
             foreach (var stat in stats)
@@ -199,7 +190,7 @@ namespace Reloading
             {
                 Name = "Average SD",
                 ChartType = SeriesChartType.Bar,
-                Color = Color.SlateBlue,
+                Color = SystemColors.ActiveCaption,
                 Font = new Font("Segoe UI", 10)
             };
             foreach (var stat in stats)

@@ -38,9 +38,9 @@ namespace Reloading
             labelTitle.Margin = new Padding(2, 0, 2, 0);
             labelTitle.Name = "labelTitle";
             labelTitle.Padding = new Padding(12);
-            labelTitle.Size = new Size(218, 78);
+            labelTitle.Size = new Size(234, 78);
             labelTitle.TabIndex = 0;
-            labelTitle.Text = "Analytics";
+            labelTitle.Text = "Shot Data";
             labelTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // shotDataGrid
